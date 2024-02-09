@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            font-family: monospace;
+            color: lime;
+            text-align: center;
+            padding-top: 30vh;
+            font-size: 25px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // JS code to display the message character by character
+        const message = "Варя, я люблю тебя";
+        let index = 0;
+        
+        function displayMessage() {
+            document.body.textContent = message.slice(0, index);
+            index++;
+
+            if (index > message.length) {
+                index = 0; // Reset the index for continuous display
+            }
+
+            setTimeout(displayMessage, 100); // Display the next character after 100ms
+        }
+        
+        displayMessage();
+    </script>
+</body>
+</html>
