@@ -1,52 +1,72 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <style> 
-        body { 
-            background-color: black; 
-            font-family: monospace; 
-            color: lime; 
-            text-align: left; 
-            padding-top: 30vh; 
-            font-size: 25px; 
-            line-height: 1.5; 
-            position: relative; 
-        } 
-        .terminal {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 20px;
-            box-sizing: border-box;
-            white-space: pre-wrap;
-            overflow-y: auto;
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+
+        body {
+
+            background-color: black;
+
+            font-family: monospace;
+
+            color: lime;
+
+            text-align: center;
+
+            padding-top: 30vh;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+
         }
 
-    </style> 
-</head> 
-<body> 
-    <div class="terminal"></div>
+    </style>
+
+</head>
+
+<body>
 
     <script>
-        const terminal = document.querySelector('.terminal');
-        const message = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nВаря, я люблю тебя";
+
+        // JS code to display the message character by character
+
+        const message = "Варя, я люблю тебя";
 
         let index = 0;
 
+        
+
         function displayMessage() {
-            terminal.textContent += message[index];
+
+            document.body.textContent = message.slice(0, index);
+
             index++;
 
-            if (index < message.length) {
-                setTimeout(displayMessage, 100); // Display the next character after 100ms 
+
+
+            if (index > message.length) {
+
+                index = 0; // Reset the index for continuous display
+
             }
+
+
+
+            setTimeout(displayMessage, 100); // Display the next character after 100ms
+
         }
 
+        
+
         displayMessage();
-    </script> 
-</body> 
+
+    </script>
+
+</body>
+
 </html>
